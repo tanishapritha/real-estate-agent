@@ -1,0 +1,29 @@
+[project]
+name = "real-estate-agent"
+version = "0.1.0"
+description = "RealEstate AI Sales OS"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy>=2.0.0",
+    "alembic",
+    "psycopg[binary]>=3.1.0",
+    "redis",
+    "celery",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "langgraph",
+    "langchain-core",
+    "litellm==1.49.0",
+    "langsmith",
+    "deepeval",
+    "opentelemetry-sdk",
+    "structlog",
+    "streamlit",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
