@@ -4,12 +4,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """Application settings, loaded from environment variables and .env file."""
     
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/real_estate_agent"
+    DATABASE_URL: str = "postgresql+psycopg://postgres:postgres@localhost:5432/real_estate_agent"
     REDIS_URL: str = "redis://localhost:6379/0"
     
     OPENAI_API_KEY: str = "mock-key"
     ANTHROPIC_API_KEY: str = "mock-key"
     GEMINI_API_KEY: str = "mock-key"
+    GROQ_API_KEY: str = ""
     
     LANGCHAIN_TRACING_V2: bool = False
     LANGCHAIN_ENDPOINT: str = "https://api.smith.langchain.com"

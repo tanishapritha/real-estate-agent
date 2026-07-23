@@ -57,3 +57,7 @@ htmlcov/
 
 # Log files
 *.log
+
+# Internal documentation files (never commit)
+implementation_plan.md
+walkthrough.md

@@ -19,6 +19,11 @@ dependencies = [
     "langsmith",
     "deepeval",
     "opentelemetry-sdk",
+    "opentelemetry-exporter-otlp-proto-http",
+    "opentelemetry-instrumentation-fastapi",
+    "opentelemetry-instrumentation-redis",
+    "opentelemetry-instrumentation-sqlalchemy",
+    "opentelemetry-instrumentation-celery",
     "structlog",
     "streamlit",
     "python-dotenv",
@@ -27,3 +32,8 @@ dependencies = [
 [build-system]
 requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app", "streamlit_app"]
+exclude = ["alembic", "scripts", "tests", "docs"]

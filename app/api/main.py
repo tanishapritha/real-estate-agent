@@ -3,6 +3,7 @@ from fastapi import FastAPI
 import structlog
 
 from app.core.logging import setup_logging
+from app.observability.tracing import init_tracing
 
 setup_logging()
 logger = structlog.get_logger(__name__)
@@ -21,6 +22,14 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+init_tracing(app)
+
+# Register API routers
+from app.api.routes.leads import router as leads_router
+from app.api.routes.metrics import router as metrics_router
+
+app.include_router(leads_router)
+app.include_router(metrics_router)
 
 
 @app.get("/health")

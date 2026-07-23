@@ -50,7 +50,7 @@ class Property(Base):
     bedrooms = Column(Integer, nullable=True)
     bathrooms = Column(Integer, nullable=True)
     description = Column(Text, nullable=True)
-    metadata = Column(JSON, nullable=True)  # extra free‑form data
+    extra_metadata = Column(JSON, nullable=True)  # extra free‑form data
 
 class Conversation(Base):
     __tablename__ = "conversations"
